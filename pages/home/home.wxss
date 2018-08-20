@@ -24,7 +24,7 @@ page, .page {
 }
 
 .page-content {
-  padding-top: 300rpx;
+  padding-top: 100rpx;
 }
 
 .page-top {

@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 
 <view class="page">
-  <view class="page-bottom">
+  <scroll-view class="page-bottom" scroll-y="true">
     <view class="page-content">
       <view class="wc" bindtap='_bindtap_one'>
         <text>第一个item1</text>
@@ -15,8 +15,32 @@
       <view class="wc" bindtap='_bindtap_four'>
         <text>第四个item4</text>
       </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
     </view>
-  </view>
+  </scroll-view>
 
   <view class="page-top {{open ? 'c-state1' : ''}}">
 
