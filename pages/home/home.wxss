@@ -1,0 +1,209 @@
+/* pages/home/home.wxss */
+
+page, .page {
+  height: 100%;
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+}
+
+.page-bottom {
+  height: 100%;
+  width: 750rpx;
+  position: fixed;
+  z-index: 0;
+  background-color: #ccc;
+}
+
+.wc {
+  color: rgb(3, 3, 3);
+  padding: 30rpx 0 30rpx 40rpx;
+}
+
+.page-content {
+  padding-top: 300rpx;
+}
+
+.page-top {
+  height: 100%;
+  position: fixed;
+  width: 750rpx;
+  z-index: 0;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: rgb(250, 250, 250);
+}
+
+.top_img {
+  /* position: absolute; */
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.top_img_search {
+  /* position: absolute; */
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+
+.c-state1 {
+  transform: rotate(0deg) scale(1) translate(75%, 0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(75%, 0%);
+}
+
+.c-state2 {
+  transform: rotate(0deg) scale(0.8) translate(75%, 0%);
+  -webkit-transform: rotate(0deg) scale(0.8) translate(75%, 0%);
+}
+
+.class_title {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 80rpx;
+  width: 730rpx;
+  flex-direction: row;
+  /* background-color: rgb(170, 144, 144); */
+  position: fixed;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  /* background-color: rgb(111, 136, 82); */
+  height: 100%;
+  width: 100%;
+  padding-top: 80rpx;
+  display: flex;
+}
+
+.view_item {
+  display: flex;
+  flex-direction: column;
+  height: 150rpx;
+  /* width: 100%; */
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 4px 1px 2px 1px #ccc;
+  margin: 8px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.view_item_girl {
+  display: flex;
+  /* flex-direction: column; */
+  height: 500rpx;
+  /* width: 100%; */
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 4px 1px 2px 1px #ccc;
+  margin: 8px;
+  position: relative;
+  /* justify-content: space-between; */
+}
+.view_item_girl_content{
+   display: flex;
+   flex: 1;
+   width: 100%;
+   height: 100%;
+}
+.content_title {
+  display: flex;
+  /* display: -webkit-box; */
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content_desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10rpx;
+  /* position: absolute; */
+}
+
+.all_title {
+  /* height: 100rpx; */
+  color: rgb(89, 102, 224);
+  font-size: 30rpx;
+  width: 100%;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.all_who {
+  color: rgb(161, 157, 157);
+  font-size: 25rpx;
+}
+
+.all_time {
+  color: rgb(161, 157, 157);
+  font-size: 25rpx;
+}
+
+
+@font-face {
+  font-family: 'iconfont';  /* project id 797214 */
+  src: url('//at.alicdn.com/t/font_797214_crq7kkn5kab.eot');
+  src: url('//at.alicdn.com/t/font_797214_crq7kkn5kab.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_797214_crq7kkn5kab.woff') format('woff'),
+  url('//at.alicdn.com/t/font_797214_crq7kkn5kab.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_797214_crq7kkn5kab.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:50rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10rpx;
+  color: rgb(115, 177, 235);
+}
+
+.icon-all:before { content: "\e696"; }
+
+.icon-app:before { content: "\e61c"; }
+
+.icon-cc-menu-circle:before { content: "\e672"; }
+
+.icon-search:before { content: "\e613"; }
+
+.icon-about:before { content: "\e640"; }
+
+.icon-android:before { content: "\e62b"; }
+
+.icon-icon_good:before { content: "\e616"; }
+
+.icon-girl:before { content: "\e66b"; }
+
+.icon-ios:before { content: "\e62a"; }
+
+.icon-socialjavascriptoutline:before { content: "\e899"; }
+
+.icon-video:before { content: "\e617"; }
+
+.icon-ziyuan:before { content: "\e618"; }
+

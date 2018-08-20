@@ -1,0 +1,7 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <loading hidden="{{hidden}}">
+   加载中...
+  </loading>
+  <web-view src="{{src}}"></web-view>
+</view>

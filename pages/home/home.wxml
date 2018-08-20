@@ -1,0 +1,87 @@
+<!--pages/home/home.wxml-->
+
+<view class="page">
+  <view class="page-bottom">
+    <view class="page-content">
+      <view class="wc" bindtap='_bindtap_one'>
+        <text>第一个item1</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_two'>
+        <text>第二个item2</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_three'>
+        <text>第三个item3</text>
+      </view>
+      <view class="wc" bindtap='_bindtap_four'>
+        <text>第四个item4</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-top {{open ? 'c-state1' : ''}}">
+
+    <view class="class_title">
+      <image class="top_img" bindtap="_tap_menu" src="../../images/menu.png">
+        <!-- <text class="iconfont icon-cc-menu-circle">{{cc-menu-circle}}</text> -->
+      </image>
+      <text>{{title}}</text>
+      <image class="top_img_search" bindtap="_tap_search" src="../../images/search.png">
+        <!-- <text class="iconfont icon-search">{{search}}</text> -->
+      </image>
+    </view>
+
+    <scroll-view class='content' scroll-y="true" bindscrolltolower="_bindtap_lower" lower-threshold="100">
+      <block wx:if="{{tabName=='one'}}">
+        <block wx:for="{{items}}" wx:key="id">
+          <block wx:if="{{item.contentType=='福利'}}">
+            <view class="view_item_girl" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
+              <image class="view_item_girl_content" src="{{item.src}}" mode='aspectFill'></image>
+            </view>
+          </block>
+          <block wx:else>
+            <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
+              <view class='content_title '>
+                <block wx:if="{{item.contentType=='iOS'}}">
+                  <!-- <image class="top_img" src='../../images/menu.png' mode='aspectFit'></image> -->
+                  <text class="iconfont icon-ios">{{ios}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='Android'}}">
+                  <text class="iconfont icon-android">{{android}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='前端'}}">
+                  <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='福利'}}">
+                  <text class="iconfont icon-girl">{{girl}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='休息视频'}}">
+                  <text class="iconfont icon-video">{{video}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='瞎推荐'}}">
+                  <text class="iconfont icon-icon_good">{{icon_good}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='拓展资源'}}">
+                  <text class="iconfont icon-ziyuan">{{ziyuan}}</text>
+                </block>
+                <block wx:elif="{{item.contentType=='App'}}">
+                  <text class="iconfont icon-app">{{app}}</text>
+                </block>
+                <view class='all_title'>{{item.desc}}</view>
+              </view>
+              <view class='content_desc' style='width:{{system.windowWidth}} '>
+                <view class='all_who'>{{item.who}}</view>
+                <view class='all_time'>{{item.time}}</view>
+              </view>
+            </view>
+          </block>
+        </block>
+      </block>
+      <block wx:elif="{{tabName=='two '}}">
+        <view class="bg_red"></view>
+      </block>
+      <block wx:else>
+        <view class="bg_red"></view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
