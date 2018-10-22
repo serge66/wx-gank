@@ -4,40 +4,34 @@
   <scroll-view class="page-bottom" scroll-y="true">
     <view class="page-content">
       <view class="wc" bindtap='_bindtap_one'>
-        <text>第一个item1</text>
+        <text>All</text>
       </view>
       <view class="wc" bindtap='_bindtap_two'>
-        <text>第二个item2</text>
+        <text>Android</text>
       </view>
       <view class="wc" bindtap='_bindtap_three'>
-        <text>第三个item3</text>
+        <text>iOS</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>JS</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>Girl</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>Video</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>Recommendation</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>Resources</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>App</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
-      </view>
-      <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
-      </view>
-      <view class="wc" bindtap='_bindtap_four'>
-        <text>第四个item4</text>
+        <text>About</text>
       </view>
     </view>
   </scroll-view>
@@ -55,7 +49,7 @@
     </view>
 
     <scroll-view class='content' scroll-y="true" bindscrolltolower="_bindtap_lower" lower-threshold="100">
-      <block wx:if="{{tabName=='one'}}">
+      <block wx:if="{{tabName=='All'}}">
         <block wx:for="{{items}}" wx:key="id">
           <block wx:if="{{item.contentType=='福利'}}">
             <view class="view_item_girl" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
@@ -100,9 +94,22 @@
           </block>
         </block>
       </block>
-      <block wx:elif="{{tabName=='two '}}">
-        <view class="bg_red"></view>
+
+      <block wx:elif="{{tabName=='Android'}}">
+        <block wx:for="{{items}}" wx:key="id">
+          <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
+            <view class='content_title'>
+              <text class="iconfont icon-android">{{android}}</text>
+              <view class='all_title'>{{item.desc}}</view>
+            </view>
+            <view class='content_desc' style='width:{{system.windowWidth}} '>
+              <view class='all_who'>{{item.who}}</view>
+              <view class='all_time'>{{item.time}}</view>
+            </view>
+          </view>
+        </block>
       </block>
+
       <block wx:else>
         <view class="bg_red"></view>
       </block>

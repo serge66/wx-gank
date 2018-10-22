@@ -18,7 +18,7 @@ Page({
     title: "All",
     system: {},
     items: [],
-    tabName: 'one',
+    tabName: 'All',
   },
   _tap_menu: function(e) {
     if (this.data.open) {
@@ -35,28 +35,32 @@ Page({
     console.log("ssssssssss")
     this.setData({
       open: false,
-      tabName: 'one'
+      tabName: 'All',
+      title:"All"
     });
   },
   _bindtap_two: function() {
     console.log("dddddd")
     this.setData({
       open: false,
-      tabName: 'tow'
+      tabName: 'Android',
+      title: "Android"
     });
   },
   _bindtap_three: function() {
     console.log("ffffff")
     this.setData({
       open: false,
-      tabName: 'one'
+      tabName: 'iOS',
+      title: "iOS"
     });
   },
   _bindtap_four: function() {
     console.log("ggggggg")
     this.setData({
       open: false,
-      tabName: 'one'
+      tabName: 'JS',
+      title: "JS"
     });
   },
   _tap_search: function() {
@@ -215,7 +219,10 @@ function bindData(itemData) {
   mWho.push(itemData.who);
   mContentType.push(itemData.type);
   mSrc.push(itemData.url);
-  // console.log(mTitle)
-  // console.log(mTime)
-  // console.log(mWho)
+
+  console.log(mTitle)
+  console.log(mTime)
+  console.log(mWho)
+  console.log(mContentType)
+  console.log(mSrc)
 }
