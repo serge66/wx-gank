@@ -57,56 +57,20 @@
             </view>
           </block>
           <block wx:else>
-            <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
-              <view class='content_title '>
-                <block wx:if="{{item.contentType=='iOS'}}">
-                  <!-- <image class="top_img" src='../../images/menu.png' mode='aspectFit'></image> -->
-                  <text class="iconfont icon-ios">{{ios}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='Android'}}">
-                  <text class="iconfont icon-android">{{android}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='前端'}}">
-                  <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='福利'}}">
-                  <text class="iconfont icon-girl">{{girl}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='休息视频'}}">
-                  <text class="iconfont icon-video">{{video}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='瞎推荐'}}">
-                  <text class="iconfont icon-icon_good">{{icon_good}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='拓展资源'}}">
-                  <text class="iconfont icon-ziyuan">{{ziyuan}}</text>
-                </block>
-                <block wx:elif="{{item.contentType=='App'}}">
-                  <text class="iconfont icon-app">{{app}}</text>
-                </block>
-                <view class='all_title'>{{item.desc}}</view>
-              </view>
-              <view class='content_desc' style='width:{{system.windowWidth}} '>
-                <view class='all_who'>{{item.who}}</view>
-                <view class='all_time'>{{item.time}}</view>
-              </view>
-            </view>
+            <template is="my_items" data="{{...items[index]}}" />
           </block>
         </block>
       </block>
 
       <block wx:elif="{{tabName=='Android'}}">
         <block wx:for="{{items}}" wx:key="id">
-          <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
-            <view class='content_title'>
-              <text class="iconfont icon-android">{{android}}</text>
-              <view class='all_title'>{{item.desc}}</view>
-            </view>
-            <view class='content_desc' style='width:{{system.windowWidth}} '>
-              <view class='all_who'>{{item.who}}</view>
-              <view class='all_time'>{{item.time}}</view>
-            </view>
-          </view>
+          <template is="my_items_android" data="{{...items[index]}}" />
+        </block>
+      </block>
+
+      <block wx:elif="{{tabName=='iOS'}}">
+        <block wx:for="{{items}}" wx:key="id">
+          <template is="my_items_ios" data="{{...items[index]}}" />
         </block>
       </block>
 
@@ -116,3 +80,66 @@
     </scroll-view>
   </view>
 </view>
+
+<template name="my_items_ios">
+  <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{src}}" bindtap='_clickItem'>
+    <view class='content_title'>
+      <text class="iconfont icon-ios">{{ios}}</text>
+      <view class='all_title'>{{desc}}</view>
+    </view>
+    <view class='content_desc' style='width:{{system.windowWidth}}'>
+      <view class='all_who'>{{who}}</view>
+      <view class='all_time'>{{time}}</view>
+    </view>
+  </view>
+</template>
+
+<template name="my_items_android">
+  <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{src}}" bindtap='_clickItem'>
+    <view class='content_title'>
+      <text class="iconfont icon-android">{{android}}</text>
+      <view class='all_title'>{{desc}}</view>
+    </view>
+    <view class='content_desc' style='width:{{system.windowWidth}}'>
+      <view class='all_who'>{{who}}</view>
+      <view class='all_time'>{{time}}</view>
+    </view>
+  </view>
+</template>
+
+<template name="my_items">
+  <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{src}}" bindtap='_clickItem'>
+    <view class='content_title '>
+      <block wx:if="{{contentType=='iOS'}}">
+        <!-- <image class="top_img" src='../../images/menu.png' mode='aspectFit'></image> -->
+        <text class="iconfont icon-ios">{{ios}}</text>
+      </block>
+      <block wx:elif="{{contentType=='Android'}}">
+        <text class="iconfont icon-android">{{android}}</text>
+      </block>
+      <block wx:elif="{{contentType=='前端'}}">
+        <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text>
+      </block>
+      <block wx:elif="{{contentType=='福利'}}">
+        <text class="iconfont icon-girl">{{girl}}</text>
+      </block>
+      <block wx:elif="{{contentType=='休息视频'}}">
+        <text class="iconfont icon-video">{{video}}</text>
+      </block>
+      <block wx:elif="{{contentType=='瞎推荐'}}">
+        <text class="iconfont icon-icon_good">{{icon_good}}</text>
+      </block>
+      <block wx:elif="{{contentType=='拓展资源'}}">
+        <text class="iconfont icon-ziyuan">{{ziyuan}}</text>
+      </block>
+      <block wx:elif="{{contentType=='App'}}">
+        <text class="iconfont icon-app">{{app}}</text>
+      </block>
+      <view class='all_title'>{{desc}}</view>
+    </view>
+    <view class='content_desc' style='width:{{system.windowWidth}}'>
+      <view class='all_who'>{{who}}</view>
+      <view class='all_time'>{{time}}</view>
+    </view>
+  </view>
+</template>

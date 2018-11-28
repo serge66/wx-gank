@@ -75,7 +75,7 @@ Page({
   _loadData: function(aType, num, isImage) {
     var that = this
     wx.request({
-      url: `http://gank.io/api/data/${aType}/40/${num}${(isImage ? '?imageView2/0/w/100' : '')}`,
+      url: `http://gank.io/api/data/${aType}/10/${num}${(isImage ? '?imageView2/0/w/100' : '')}`,
       showLoading: true,
       success: (res) => {
         console.log(res.data.results)
