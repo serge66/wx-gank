@@ -1,14 +1,52 @@
 <!--components/itemcomponent/itemcomponent.wxml-->
 
 <block wx:for="{{items}}" wx:key="id">
-  <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{items[index].src}}" bindtap='_clickItem'>
-    <view class='content_title'>
-      <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text>
-      <view class='all_title'>{{items[index].desc}}</view>
-    </view>
-    <view class='content_desc' style='width:{{system.windowWidth}}'>
-      <view class='all_who'>{{items[index].who}}</view>
-      <view class='all_time'>{{items[index].time}}</view>
-    </view>
+  <view id='{{index}}' style='width:{{system.windowWidth}}' data-src="{{items[index].src}}" bindtap='_clickItem'>
+    <block wx:if="{{items[index].contentType=='福利'}}">
+      <view class="view_item_girl" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
+        <image class="view_item_girl_content" src="{{item.src}}" mode='aspectFill'></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="view_item">
+        <view class='content_title'>
+          <!-- <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text> -->
+          <template is="my_items" data="{{mType}}" />
+          <view class='all_title'>{{items[index].desc}}</view>
+        </view>
+        <view class='content_desc' style='width:{{system.windowWidth}}'>
+          <view class='all_who'>{{items[index].who}}</view>
+          <view class='all_time'>{{items[index].time}}</view>
+        </view>
+      </view>
+    </block>
   </view>
 </block>
+
+<template name="my_items">
+  <block wx:if="{{mType=='iOS'}}">
+    <!-- <image class="top_img" src='../../images/menu.png' mode='aspectFit'></image> -->
+    <text class="iconfont icon-ios">{{ios}}</text>
+  </block>
+  <block wx:elif="{{mType=='Android'}}">
+    <text class="iconfont icon-android">{{android}}</text>
+  </block>
+  <block wx:elif="{{mType=='前端'}}">
+    <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text>
+  </block>
+  <block wx:elif="{{mType=='福利'}}">
+    <text class="iconfont icon-girl">{{girl}}</text>
+  </block>
+  <block wx:elif="{{mType=='休息视频'}}">
+    <text class="iconfont icon-video">{{video}}</text>
+  </block>
+  <block wx:elif="{{mType=='瞎推荐'}}">
+    <text class="iconfont icon-icon_good">{{icon_good}}</text>
+  </block>
+  <block wx:elif="{{mType=='拓展资源'}}">
+    <text class="iconfont icon-ziyuan">{{ziyuan}}</text>
+  </block>
+  <block wx:elif="{{mType=='App'}}">
+    <text class="iconfont icon-app">{{app}}</text>
+  </block>
+</template>

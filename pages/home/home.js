@@ -46,6 +46,7 @@ Page({
       tabName: 'Android',
       title: "Android"
     });
+    wx.startPullDownRefresh();
   },
   _bindtap_three: function() {
     console.log("ffffff")
@@ -54,6 +55,7 @@ Page({
       tabName: 'iOS',
       title: "iOS"
     });
+    wx.startPullDownRefresh();
   },
   _bindtap_four: function() {
     console.log("ggggggg")
@@ -71,6 +73,51 @@ Page({
       open: false,
       tabName: 'Girl',
       title: "Girl"
+    });
+    wx.startPullDownRefresh();
+  },
+  _bindtap_six: function() {
+    console.log("ffffffff")
+    this.setData({
+      open: false,
+      tabName: 'Video',
+      title: "Video"
+    });
+    wx.startPullDownRefresh();
+  },
+  _bindtap_seven: function() {
+    console.log("ffffffff")
+    this.setData({
+      open: false,
+      tabName: 'Recommendation',
+      title: "Recommendation"
+    });
+    wx.startPullDownRefresh();
+  },
+  _bindtap_eight: function() {
+    console.log("ffffffff")
+    this.setData({
+      open: false,
+      tabName: 'Resources',
+      title: "Resources"
+    });
+    wx.startPullDownRefresh();
+  },
+  _bindtap_nine: function() {
+    console.log("ffffffff")
+    this.setData({
+      open: false,
+      tabName: 'App',
+      title: "App"
+    });
+    wx.startPullDownRefresh();
+  },
+  _bindtap_ten: function() {
+    console.log("ffffffff")
+    this.setData({
+      open: false,
+      tabName: 'About',
+      title: "About"
     });
   },
   _tap_search: function() {
@@ -187,20 +234,12 @@ Page({
   onPullDownRefresh: function() {
     console.log("用户下拉了....")
 
-    if (this.data.tabName == 'JS') {
-      console.log("tabName == 'JS'....")
+    if (this.data.tabName == 'All') {
+      page = 1;
+      this._loadData(mType, page, false)
+    } else {
       this.selectComponent('#component-js')._refreshData()
-      return;
     }
-
-    page = 1;
-    this._loadData(mType, page, false)
-
-    // wx.stopPullDownRefresh(); //为停止当前页面下拉刷新
-    // setTimeout(function() {
-    //   wx.stopPullDownRefresh()
-    // }, 1000)
-
   },
 
   /**
@@ -219,20 +258,20 @@ Page({
 
   _bindtap_lower: function() {
     console.log("触发上拉加载动作....")
-    if (this.data.tabName == 'JS') {
-      console.log("tabName == 'JS'....")
+
+    if (this.data.tabName == 'All') {
+      page++
+      this._loadData(mType, page, false)
+
+      // wx.showToast({
+      //   title: 'onReachBottom',
+      //   icon: 'none',
+      //   duration: 600
+      // });
+    } else {
       this.selectComponent('#component-js')._loadMoreData()
-      return;
     }
 
-    page++
-    this._loadData(mType, page, false)
-
-    wx.showToast({
-      title: 'onReachBottom',
-      icon: 'none',
-      duration: 600
-    });
   },
   //自定义组件调用的方法,暂时未用 2018-11-29 10:24:56
   onMyEvent: function(e) {

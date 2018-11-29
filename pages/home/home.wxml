@@ -18,19 +18,19 @@
       <view class="wc" bindtap='_bindtap_five'>
         <text>Girl</text>
       </view>
-      <view class="wc" bindtap='_bindtap_four'>
+      <view class="wc" bindtap='_bindtap_six'>
         <text>Video</text>
       </view>
-      <view class="wc" bindtap='_bindtap_four'>
+      <view class="wc" bindtap='_bindtap_seven'>
         <text>Recommendation</text>
       </view>
-      <view class="wc" bindtap='_bindtap_four'>
+      <view class="wc" bindtap='_bindtap_eight'>
         <text>Resources</text>
       </view>
-      <view class="wc" bindtap='_bindtap_four'>
+      <view class="wc" bindtap='_bindtap_nine'>
         <text>App</text>
       </view>
-      <view class="wc" bindtap='_bindtap_four'>
+      <view class="wc" bindtap='_bindtap_ten'>
         <text>About</text>
       </view>
     </view>
@@ -65,21 +65,43 @@
       </block>
 
       <block wx:elif="{{tabName=='Android'}}">
-        <block wx:for="{{items}}" wx:key="id">
+        <!-- <block wx:for="{{items}}" wx:key="id">
           <template is="my_items_android" data="{{...items[index]}}" />
-        </block>
+        </block> -->
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="Android"></component-item>
       </block>
 
       <block wx:elif="{{tabName=='iOS'}}">
-        <block wx:for="{{items}}" wx:key="id">
+        <!-- <block wx:for="{{items}}" wx:key="id">
           <template is="my_items_ios" data="{{...items[index]}}" />
-        </block>
+        </block> -->
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="iOS"></component-item>
       </block>
 
       <block wx:elif="{{tabName=='JS'}}">
         <!-- <block wx:for="{{items}}" wx:key="id"> -->
-        <component-item bind:myevent="onMyEvent" id="component-js"></component-item>
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="前端"></component-item>
         <!-- </block> -->
+      </block>
+
+      <block wx:elif="{{tabName=='Girl'}}">
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="福利"></component-item>
+      </block>
+
+      <block wx:elif="{{tabName=='Video'}}">
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="休息视频"></component-item>
+      </block>
+
+      <block wx:elif="{{tabName=='Recommendation'}}">
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="瞎推荐"></component-item>
+      </block>
+
+      <block wx:elif="{{tabName=='Resources'}}">
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="拓展资源"></component-item>
+      </block>
+
+      <block wx:elif="{{tabName=='App'}}">
+        <component-item bind:myevent="onMyEvent" id="component-js" mType="App"></component-item>
       </block>
 
       <block wx:else>

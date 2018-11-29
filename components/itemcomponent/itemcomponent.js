@@ -2,7 +2,7 @@
 
 
 var page;
-var mType = "前端";
+// var mType = "前端";
 var mTitle = [];
 var mTime = [];
 var mWho = [];
@@ -16,6 +16,10 @@ Component({
   properties: {
     items: {
       type: Object
+    },
+    mType: {
+      type: String,
+      value: 'all'
     }
   },
 
@@ -45,14 +49,14 @@ Component({
       console.log("_loadMoreData")
 
       page++
-      this._loadData(mType, page, false)
+      this._loadData(this.data.mType, page, false)
 
     },
     _refreshData: function(e) {
       console.log("_refreshData")
       // wx.startPullDownRefresh();
       page = 1;
-      this._loadData(mType, page, false)
+      this._loadData(this.data.mType, page, false)
     },
     _loadData: function(aType, num, isImage) {
       var that = this
