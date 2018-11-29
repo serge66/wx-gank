@@ -1,0 +1,14 @@
+<!--components/itemcomponent/itemcomponent.wxml-->
+
+<block wx:for="{{items}}" wx:key="id">
+  <view id='{{index}}' class="view_item" style='width:{{system.windowWidth}}' data-src="{{items[index].src}}" bindtap='_clickItem'>
+    <view class='content_title'>
+      <text class="iconfont icon-socialjavascriptoutline">{{socialjavascriptoutline}}</text>
+      <view class='all_title'>{{items[index].desc}}</view>
+    </view>
+    <view class='content_desc' style='width:{{system.windowWidth}}'>
+      <view class='all_who'>{{items[index].who}}</view>
+      <view class='all_time'>{{items[index].time}}</view>
+    </view>
+  </view>
+</block>

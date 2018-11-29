@@ -36,7 +36,7 @@ Page({
     this.setData({
       open: false,
       tabName: 'All',
-      title:"All"
+      title: "All"
     });
   },
   _bindtap_two: function() {
@@ -61,6 +61,16 @@ Page({
       open: false,
       tabName: 'JS',
       title: "JS"
+    });
+    // this.selectComponent('#component-js')._refreshData()此代码可被下方代码代替
+    wx.startPullDownRefresh();
+  },
+  _bindtap_five: function() {
+    console.log("ffffffff")
+    this.setData({
+      open: false,
+      tabName: 'Girl',
+      title: "Girl"
     });
   },
   _tap_search: function() {
@@ -176,6 +186,13 @@ Page({
    */
   onPullDownRefresh: function() {
     console.log("用户下拉了....")
+
+    if (this.data.tabName == 'JS') {
+      console.log("tabName == 'JS'....")
+      this.selectComponent('#component-js')._refreshData()
+      return;
+    }
+
     page = 1;
     this._loadData(mType, page, false)
 
@@ -190,7 +207,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    console.log("触发上拉加载动作22222....")
   },
 
   /**
@@ -202,6 +219,12 @@ Page({
 
   _bindtap_lower: function() {
     console.log("触发上拉加载动作....")
+    if (this.data.tabName == 'JS') {
+      console.log("tabName == 'JS'....")
+      this.selectComponent('#component-js')._loadMoreData()
+      return;
+    }
+
     page++
     this._loadData(mType, page, false)
 
@@ -210,6 +233,12 @@ Page({
       icon: 'none',
       duration: 600
     });
+  },
+  //自定义组件调用的方法,暂时未用 2018-11-29 10:24:56
+  onMyEvent: function(e) {
+    console.log("onMyEvent-- ")
+    e.detail // 自定义组件触发事件时提供的detail对象
+    event.currentTarget.dataset.src
   }
 })
 
@@ -220,9 +249,9 @@ function bindData(itemData) {
   mContentType.push(itemData.type);
   mSrc.push(itemData.url);
 
-  console.log(mTitle)
-  console.log(mTime)
-  console.log(mWho)
-  console.log(mContentType)
-  console.log(mSrc)
+  // console.log(mTitle)
+  // console.log(mTime)
+  // console.log(mWho)
+  // console.log(mContentType)
+  // console.log(mSrc)
 }

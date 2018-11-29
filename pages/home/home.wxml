@@ -15,7 +15,7 @@
       <view class="wc" bindtap='_bindtap_four'>
         <text>JS</text>
       </view>
-      <view class="wc" bindtap='_bindtap_four'>
+      <view class="wc" bindtap='_bindtap_five'>
         <text>Girl</text>
       </view>
       <view class="wc" bindtap='_bindtap_four'>
@@ -35,6 +35,8 @@
       </view>
     </view>
   </scroll-view>
+
+
 
   <view class="page-top {{open ? 'c-state1' : ''}}">
 
@@ -72,6 +74,12 @@
         <block wx:for="{{items}}" wx:key="id">
           <template is="my_items_ios" data="{{...items[index]}}" />
         </block>
+      </block>
+
+      <block wx:elif="{{tabName=='JS'}}">
+        <!-- <block wx:for="{{items}}" wx:key="id"> -->
+        <component-item bind:myevent="onMyEvent" id="component-js"></component-item>
+        <!-- </block> -->
       </block>
 
       <block wx:else>
