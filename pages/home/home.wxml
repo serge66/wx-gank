@@ -36,8 +36,6 @@
     </view>
   </scroll-view>
 
-
-
   <view class="page-top {{open ? 'c-state1' : ''}}">
 
     <view class="class_title">

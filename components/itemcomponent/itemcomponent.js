@@ -112,20 +112,15 @@ Component({
   },
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-    attached: function() {},
-    moved: function() {},
-    detached: function() {},
-  },
-  pageLifetimes: {
-    // 组件所在页面的生命周期函数
-    show: function() {},
-    hide: function() {},
-    resize: function() {},
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function(options) {
+    created: function() {
+      console.log("组件生命周期函数 created " + this.data.mType)
+    },
+    onLoad: function() {
+      console.log("组件生命周期函数 onLoad " + this.data.mType)
+    },
+    attached: function() {
+      console.log("组件生命周期函数 attached " + this.data.mType)
 
       var that = this
       wx.getSystemInfo({
@@ -135,6 +130,37 @@ Component({
           })
         }
       })
+      wx.startPullDownRefresh();
+
+    },
+    ready: function() {
+      console.log("组件生命周期函数 ready " + this.data.mType)
+    },
+    moved: function() {
+      console.log("组件生命周期函数 moved " + this.data.mType)
+    },
+    detached: function() {
+      console.log("组件生命周期函数 detached " + this.data.mType)
+    },
+  },
+  pageLifetimes: {
+    // 组件所在页面的生命周期函数
+    show: function() {
+      console.log("组件所在页面的生命周期函数 show " + this.data.mType)
+    },
+    hide: function() {
+      console.log("组件所在页面的生命周期函数 hide " + this.data.mType)
+    },
+    resize: function() {
+      console.log("组件所在页面的生命周期函数 resize " + this.data.mType)
+    },
+
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function(options) {
+      console.log("组件所在页面的生命周期函数 onload")
+
     },
   },
 })

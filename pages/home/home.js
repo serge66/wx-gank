@@ -46,7 +46,7 @@ Page({
       tabName: 'Android',
       title: "Android"
     });
-    wx.startPullDownRefresh();
+    
   },
   _bindtap_three: function() {
     console.log("ffffff")
@@ -55,7 +55,7 @@ Page({
       tabName: 'iOS',
       title: "iOS"
     });
-    wx.startPullDownRefresh();
+    
   },
   _bindtap_four: function() {
     console.log("ggggggg")
@@ -65,7 +65,7 @@ Page({
       title: "JS"
     });
     // this.selectComponent('#component-js')._refreshData()此代码可被下方代码代替
-    wx.startPullDownRefresh();
+    // wx.startPullDownRefresh();
   },
   _bindtap_five: function() {
     console.log("ffffffff")
@@ -74,7 +74,6 @@ Page({
       tabName: 'Girl',
       title: "Girl"
     });
-    wx.startPullDownRefresh();
   },
   _bindtap_six: function() {
     console.log("ffffffff")
@@ -83,7 +82,6 @@ Page({
       tabName: 'Video',
       title: "Video"
     });
-    wx.startPullDownRefresh();
   },
   _bindtap_seven: function() {
     console.log("ffffffff")
@@ -92,7 +90,6 @@ Page({
       tabName: 'Recommendation',
       title: "Recommendation"
     });
-    wx.startPullDownRefresh();
   },
   _bindtap_eight: function() {
     console.log("ffffffff")
@@ -101,7 +98,6 @@ Page({
       tabName: 'Resources',
       title: "Resources"
     });
-    wx.startPullDownRefresh();
   },
   _bindtap_nine: function() {
     console.log("ffffffff")
@@ -110,7 +106,6 @@ Page({
       tabName: 'App',
       title: "App"
     });
-    wx.startPullDownRefresh();
   },
   _bindtap_ten: function() {
     console.log("ffffffff")
