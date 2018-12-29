@@ -46,7 +46,7 @@ Page({
       tabName: 'Android',
       title: "Android"
     });
-    
+
   },
   _bindtap_three: function() {
     console.log("ffffff")
@@ -55,7 +55,7 @@ Page({
       tabName: 'iOS',
       title: "iOS"
     });
-    
+
   },
   _bindtap_four: function() {
     console.log("ggggggg")
@@ -119,6 +119,10 @@ Page({
 
   },
   _clickItem: function(event) {
+    console.log(event)
+    
+  },
+  _click_goto: function(event) {
     console.log(event)
     wx.navigateTo({
       url: '../detail/detail?src=' + event.currentTarget.dataset.src,
@@ -192,6 +196,12 @@ Page({
       }
     })
     wx.startPullDownRefresh();
+
+    // var strtime = '2018-12-04';
+    // var date = new Date(strtime);
+    // var time1 = date.getTime();
+    // console.log(time1 - 1543904006)
+
   },
 
   /**

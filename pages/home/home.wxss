@@ -119,12 +119,14 @@ page, .page {
   position: relative;
   /* justify-content: space-between; */
 }
-.view_item_girl_content{
-   display: flex;
-   flex: 1;
-   width: 100%;
-   height: 100%;
+
+.view_item_girl_content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
 }
+
 .content_title {
   display: flex;
   /* display: -webkit-box; */
@@ -163,47 +165,86 @@ page, .page {
   font-size: 25rpx;
 }
 
+.about {
+  flex-direction: column;
+  position: fixed;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: rgb(161, 157, 157);
+}
+.about_text{
+  font-size: 35rpx;
+}
+.text_color{
+  color: rgb(90, 100, 240);
+}
 
 @font-face {
-  font-family: 'iconfont';  /* project id 797214 */
+  font-family: 'iconfont'; /* project id 797214 */
   src: url('//at.alicdn.com/t/font_797214_crq7kkn5kab.eot');
   src: url('//at.alicdn.com/t/font_797214_crq7kkn5kab.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_797214_crq7kkn5kab.woff') format('woff'),
-  url('//at.alicdn.com/t/font_797214_crq7kkn5kab.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_797214_crq7kkn5kab.svg#iconfont') format('svg');
+         url('//at.alicdn.com/t/font_797214_crq7kkn5kab.woff') format('woff'),
+         url('//at.alicdn.com/t/font_797214_crq7kkn5kab.ttf') format('truetype'),
+         url('//at.alicdn.com/t/font_797214_crq7kkn5kab.svg#iconfont') format('svg');
 }
 
 .iconfont {
-  font-family:"iconfont" !important;
-  font-size:50rpx;
-  font-style:normal;
+  font-family: "iconfont" !important;
+  font-size: 50rpx;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-right: 10rpx;
   color: rgb(115, 177, 235);
 }
 
-.icon-all:before { content: "\e696"; }
+.icon-all:before {
+  content: "\e696";
+}
 
-.icon-app:before { content: "\e61c"; }
+.icon-app:before {
+  content: "\e61c";
+}
 
-.icon-cc-menu-circle:before { content: "\e672"; }
+.icon-cc-menu-circle:before {
+  content: "\e672";
+}
 
-.icon-search:before { content: "\e613"; }
+.icon-search:before {
+  content: "\e613";
+}
 
-.icon-about:before { content: "\e640"; }
+.icon-about:before {
+  content: "\e640";
+}
 
-.icon-android:before { content: "\e62b"; }
+.icon-android:before {
+  content: "\e62b";
+}
 
-.icon-icon_good:before { content: "\e616"; }
+.icon-icon_good:before {
+  content: "\e616";
+}
 
-.icon-girl:before { content: "\e66b"; }
+.icon-girl:before {
+  content: "\e66b";
+}
 
-.icon-ios:before { content: "\e62a"; }
+.icon-ios:before {
+  content: "\e62a";
+}
 
-.icon-socialjavascriptoutline:before { content: "\e899"; }
+.icon-socialjavascriptoutline:before {
+  content: "\e899";
+}
 
-.icon-video:before { content: "\e617"; }
+.icon-video:before {
+  content: "\e617";
+}
 
-.icon-ziyuan:before { content: "\e618"; }
-
+.icon-ziyuan:before {
+  content: "\e618";
+}

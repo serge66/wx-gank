@@ -49,7 +49,7 @@
     </view>
 
     <scroll-view class='content' scroll-y="true" bindscrolltolower="_bindtap_lower" lower-threshold="100">
-      <block wx:if="{{tabName=='All'}}">
+      <block wx:if="{{tabName=='All'}}" >
         <block wx:for="{{items}}" wx:key="id">
           <block wx:if="{{item.contentType=='福利'}}">
             <view class="view_item_girl" style='width:{{system.windowWidth}}' data-src="{{item.src}}" bindtap='_clickItem'>
@@ -103,7 +103,18 @@
       </block>
 
       <block wx:else>
-        <view class="bg_red"></view>
+        <view class="about">
+          <text class='about_text'>CSDN:</text>
+          <text class='about_text text_color' selectable bindtap='_click_goto' data-src='https://blog.csdn.net/vitamio'>https://blog.csdn.net/vitamio</text>
+          <text class='about_text'>掘金:</text>
+          <text class='about_text text_color' selectable bindtap='_click_goto' data-src='https://juejin.im/user/57cfc8cf816dfa005422eaf0'>https://juejin.im/user/57cfc8cf816dfa005422eaf0</text>
+          <text class='about_text'>简书:</text>
+          <text class='about_text text_color' selectable bindtap='_click_goto' data-src='https://www.jianshu.com/u/2ac1317d87c9'>https://www.jianshu.com/u/2ac1317d87c9</text>
+          <text class='about_text'>github:</text>
+          <text class='about_text text_color' selectable bindtap='_click_goto' data-src='https://github.com/serge66'>https://github.com/serge66</text>
+          <text class='about_text'>React Native版 Gank App:</text>
+          <text class='about_text text_color' selectable bindtap='_click_goto' data-src='https://github.com/serge66/gank'>https://github.com/serge66/gank</text>
+        </view>
       </block>
     </scroll-view>
   </view>
